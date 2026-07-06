@@ -85,13 +85,6 @@ const observer = new IntersectionObserver(
 );
 revealTargets.forEach((el) => observer.observe(el));
 
-// お問い合わせフォーム(仮の送信ハンドラ)
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  alert('現在このフォームはデモ状態です。実際に送信を受け取るには、Formspree などの外部サービスと連携してください。');
-});
-
 // 開幕演出(絞り羽根)を一定時間後にDOMから外し、操作の邪魔にならないようにする
 const irisIntro = document.getElementById('irisIntro');
 if (irisIntro) {

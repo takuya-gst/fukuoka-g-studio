@@ -507,34 +507,8 @@ ul{ list-style: none; }
 /* ==========================================================================
    Contact
    ========================================================================== */
-.contact-form{ max-width: 560px; }
-.form-row{ margin-bottom: 22px; display:flex; flex-direction:column; gap:8px; }
-.form-row label{
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  color: var(--ink-dim);
-}
-.form-row input,
-.form-row select,
-.form-row textarea{
-  background: var(--bg-elevated);
-  border: 1px solid var(--line);
-  color: var(--ink);
-  padding: 13px 14px;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  border-radius: 2px;
-  transition: border-color .25s ease;
-}
-.form-row input:focus,
-.form-row select:focus,
-.form-row textarea:focus{
-  border-color: var(--gold);
-  outline: none;
-}
-.form-note{
-  margin-top: 14px;
+.contact-cta{ display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+.contact-note{
   font-size: 0.78rem;
   color: var(--ink-dim);
 }
