@@ -327,6 +327,7 @@ ul{ list-style: none; }
 .section-alt > *{ max-width: var(--wrap); margin-left:auto; margin-right:auto; }
 
 .section-head{ max-width: 640px; margin-bottom: clamp(40px, 6vw, 72px); }
+#service .section-head{ max-width: none; }
 .section-title{
   font-family: var(--font-display);
   font-weight: 700;
@@ -337,6 +338,7 @@ ul{ list-style: none; }
   white-space: nowrap;
 }
 .section-lead{ color: var(--ink-dim); font-size: 0.98rem; }
+#serviceLead{ white-space: nowrap; }
 
 /* ==========================================================================
    Service
@@ -486,7 +488,7 @@ ul{ list-style: none; }
   position:absolute; inset: 18px;
   border: 1px solid var(--line);
 }
-.about-copy{ color: var(--ink-dim); margin: 20px 0 32px; font-size: 0.96rem; }
+.about-copy{ color: var(--ink-dim); margin: 20px 0 32px; font-size: 0.98rem; }
 .about-meta{ display:flex; flex-direction:column; gap: 14px; }
 .about-meta > div{
   display:flex;
@@ -547,6 +549,7 @@ ul{ list-style: none; }
 }
 
 @media (max-width: 720px){
+  #serviceLead{ white-space: normal; }
   .site-nav{
     position: fixed;
     top: 64px; right: 0;

@@ -19,17 +19,20 @@ function fitHeroText() {
   const heroTitle = document.getElementById('heroTitle');
   const heroCopy = document.getElementById('heroCopy');
   const aboutTitle = document.getElementById('aboutTitle');
+  const serviceLead = document.getElementById('serviceLead');
   const isMobile = window.innerWidth <= 720;
 
   // 会社名は画面幅に関わらず1行に収まるよう自動縮小
   fitToOneLine(heroTitle);
   fitToOneLine(aboutTitle);
 
-  // キャッチフレーズはPCでは1行、スマホでは手動の改行位置で折り返す
+  // キャッチフレーズ・SERVICEのリード文はPCでは1行、スマホでは自然な折り返し
   if (isMobile) {
     if (heroCopy) heroCopy.style.fontSize = '';
+    if (serviceLead) serviceLead.style.fontSize = '';
   } else {
     fitToOneLine(heroCopy);
+    fitToOneLine(serviceLead);
   }
 }
 
