@@ -20,7 +20,9 @@ function fitHeroText() {
   const heroCopy = document.getElementById('heroCopy');
   const aboutTitle = document.getElementById('aboutTitle');
   const serviceLead = document.getElementById('serviceLead');
+  const detailTaglines = document.querySelectorAll('.detail-tagline');
   const isMobile = window.innerWidth <= 720;
+  const isNarrow = window.innerWidth <= 560;
 
   // 会社名は画面幅に関わらず1行に収まるよう自動縮小
   fitToOneLine(heroTitle);
@@ -34,6 +36,15 @@ function fitHeroText() {
     fitToOneLine(heroCopy);
     fitToOneLine(serviceLead);
   }
+
+  // 詳細ページのタグラインは、狭い画面幅以外では各行が折り返さないよう自動縮小
+  detailTaglines.forEach((el) => {
+    if (isNarrow) {
+      el.style.fontSize = '';
+    } else {
+      fitToOneLine(el);
+    }
+  });
 }
 
 fitHeroText();
@@ -43,6 +54,20 @@ window.addEventListener('resize', () => {
 if (document.fonts && document.fonts.ready) {
   document.fonts.ready.then(fitHeroText);
 }
+
+// 実績の横スクロール:端まで来たらフェードを消す
+const worksGrids = document.querySelectorAll('.works-grid');
+function updateEdgeFade(el) {
+  const atStart = el.scrollLeft <= 1;
+  const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+  el.classList.toggle('at-start', atStart);
+  el.classList.toggle('at-end', atEnd);
+}
+worksGrids.forEach((el) => {
+  updateEdgeFade(el);
+  el.addEventListener('scroll', () => updateEdgeFade(el), { passive: true });
+  window.addEventListener('resize', () => updateEdgeFade(el));
+});
 
 // ヘッダーのスクロール状態
 const header = document.getElementById('siteHeader');
@@ -71,7 +96,7 @@ siteNav.querySelectorAll('a').forEach((link) => {
 
 // スクロールで要素をフェードイン
 const revealTargets = document.querySelectorAll(
-  '.service-card, .work-card, .price-card, .about-grid, .section-head'
+  '.service-row, .work-card, .price-card, .about-grid, .section-head'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 
