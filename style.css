@@ -946,3 +946,24 @@ ul{ list-style: none; }
   .price-spec-label{ width:auto; }
 }
 
+/* 横向き・画面の高さが低い端末向けの安全対策 */
+html{ overflow-x: hidden; }
+
+@media (max-height: 500px) and (max-width: 900px){
+  .hero{
+    display:block;
+    min-height: auto;
+    padding-top: 84px;
+  }
+  .hero-content{
+    padding: 24px var(--pad) 32px;
+  }
+  .hero-title{
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+    margin-bottom: 14px;
+  }
+  .hero-copy{ margin-bottom: 20px; }
+  .hero-actions{ flex-direction:row; }
+  .scroll-cue{ display:none; }
+}
+
