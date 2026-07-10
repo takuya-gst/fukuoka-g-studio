@@ -739,7 +739,7 @@ ul{ list-style: none; }
     font-size: clamp(0.92rem, 4vw, 1.05rem);
   }
   .hero-media video{
-    object-fit: contain;
+    object-fit: cover;
     object-position: center top;
   }
 
