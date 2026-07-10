@@ -631,11 +631,16 @@ ul{ list-style: none; }
 .about-grid{
   display:grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(30px, 6vw, 80px);
+  grid-template-areas:
+    "visual heading"
+    "visual body";
+  row-gap: 12px;
+  column-gap: clamp(30px, 6vw, 80px);
   align-items:center;
 }
-.about-visual{ position:relative; aspect-ratio: 4/5; min-width: 0; }
-.about-text{ min-width: 0; }
+.about-heading{ grid-area: heading; min-width: 0; }
+.about-visual{ grid-area: visual; position:relative; aspect-ratio: 4/5; min-width: 0; }
+.about-body{ grid-area: body; min-width: 0; align-self:start; }
 .about-frame{
   position:absolute; inset:0;
   background: linear-gradient(155deg,#141416,#232019 55%, #17171a);
@@ -703,12 +708,23 @@ ul{ list-style: none; }
   .service-row.reverse .service-visual,
   .service-row.reverse .service-copy{ order: initial; }
   .pricing-grid{ grid-template-columns: 1fr; }
-  .about-grid{ grid-template-columns: minmax(0, 1fr); }
+  .about-grid{
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "heading"
+      "visual"
+      "body";
+    row-gap: clamp(20px, 5vw, 32px);
+  }
   .about-visual{ aspect-ratio: 16/9; }
 }
 
 @media (max-width: 720px){
   #serviceLead{ white-space: normal; }
+  .service-copy h3{
+    white-space: nowrap;
+    font-size: clamp(1.15rem, 5.2vw, 1.6rem);
+  }
   .site-nav{
     position: fixed;
     top: 64px; right: 0;
