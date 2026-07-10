@@ -730,6 +730,9 @@ ul{ list-style: none; }
   .nav-toggle.is-active span:nth-child(2){ opacity:0; }
   .nav-toggle.is-active span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
+  .hero{
+    padding-top: 84px;
+  }
   .hero-title{
     white-space: nowrap;
     font-size: clamp(1.6rem, 9.5vw, 3rem);
