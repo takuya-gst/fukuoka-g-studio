@@ -38,7 +38,19 @@
     <span class="brand-word">FUKUOKA_G_STUDIO</span>
   </a>
   <nav class="site-nav" id="siteNav">
-    <a href="#service">SERVICE</a>
+    <div class="nav-service-wrap">
+      <div class="nav-service-row">
+        <a href="#service" class="nav-service-link">SERVICE</a>
+        <button class="nav-caret-btn" aria-label="SERVICEのサブメニューを開く" aria-expanded="false">
+          <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1 L5 5 L9 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="nav-dropdown">
+        <a href="service-shutter.html">出張撮影</a>
+        <a href="service-movie.html">映像制作</a>
+        <a href="service-sns.html">SNS運用代行</a>
+      </div>
+    </div>
     <a href="#pricing">PRICING</a>
     <a href="#about">ABOUT</a>
     <a href="#works">PORTFOLIO</a>
@@ -61,7 +73,7 @@
   <div class="hero-content">
     <p class="eyebrow"><span class="eyebrow-mark">◎</span> FUKUOKA / VISUAL CREATIVE STUDIO</p>
     <h1 class="hero-title" id="heroTitle">FUKUOKA_G_STUDIO</h1>
-    <p class="hero-copy" id="heroCopy">撮影、編集、発信。<br class="br-mobile">その先にある「伝わる」までを、福岡から。</p>
+    <p class="hero-copy" id="heroCopy">撮影、編集、発信。<br class="br-mobile">その先にある「伝わる」までを、かたちにする。</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-primary">お問い合わせ</a>
       <a href="#works" class="btn btn-ghost">実績を見る</a>
@@ -199,19 +211,21 @@
       <p class="eyebrow"><span class="eyebrow-mark">◎</span> ABOUT</p>
       <h2 class="section-title" id="aboutTitle">FUKUOKA_G_STUDIO について</h2>
     </div>
-    <div class="about-visual" aria-hidden="true">
-      <div class="about-frame"></div>
+    <div class="about-visual">
+      <img src="images/about.jpg" alt="FUKUOKA_G_STUDIO 撮影の様子" class="about-photo">
+      <div class="about-frame-line"></div>
     </div>
     <div class="about-body">
       <p class="about-copy">
-        福岡を拠点に、撮影・動画編集・SNS運用代行を手がけるクリエイティブスタジオです。<br><br>
-        「良い映像を作る」ことと「見てもらえる状態を作り続ける」ことは、別の技術だと考えています。撮影と編集の技術に、SNS運用という継続の仕組みを掛け合わせることで、単発の制作物ではなく、育ち続ける発信をお届けします。
+        福岡を拠点に、出張撮影・映像制作・SNS運用代行を手がけるクリエイティブスタジオです。<br><br>
+        撮影、編集、運用。それぞれの分野で、一つひとつのご依頼に丁寧に向き合うことを大切にしています。ジャンルや規模を問わず、まずはお気軽にご相談ください。
       </p>
       <dl class="about-meta">
         <div><dt>所在地</dt><dd>福岡県</dd></div>
         <div><dt>対応エリア</dt><dd>福岡市内 / 県内出張可</dd></div>
         <div><dt>対応内容</dt><dd>撮影・動画編集・SNS運用代行</dd></div>
       </dl>
+      <a href="about.html" class="service-more">会社概要を見る <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>

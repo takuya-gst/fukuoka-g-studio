@@ -20,7 +20,7 @@ function fitHeroText() {
   const heroCopy = document.getElementById('heroCopy');
   const aboutTitle = document.getElementById('aboutTitle');
   const serviceLead = document.getElementById('serviceLead');
-  const detailTaglines = document.querySelectorAll('.detail-tagline');
+  const detailTaglines = document.querySelectorAll('.detail-tagline:not(#aboutTagline)');
   const isMobile = window.innerWidth <= 720;
   const isNarrow = window.innerWidth <= 560;
 
@@ -93,6 +93,23 @@ siteNav.querySelectorAll('a').forEach((link) => {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+// SERVICEのサブメニュー(出張撮影・映像制作・SNS運用代行)の開閉
+const navServiceWrap = document.querySelector('.nav-service-wrap');
+const navCaretBtn = document.querySelector('.nav-caret-btn');
+if (navServiceWrap && navCaretBtn) {
+  navCaretBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = navServiceWrap.classList.toggle('is-open');
+    navCaretBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', (e) => {
+    if (!navServiceWrap.contains(e.target)) {
+      navServiceWrap.classList.remove('is-open');
+      navCaretBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 // スクロールで要素をフェードイン
 const revealTargets = document.querySelectorAll(
