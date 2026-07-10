@@ -725,6 +725,13 @@ ul{ list-style: none; }
     white-space: nowrap;
     font-size: clamp(1.15rem, 5.2vw, 1.6rem);
   }
+  .price-spec-value{
+    white-space: nowrap;
+    font-size: clamp(1.08rem, 4.9vw, 1.35rem);
+  }
+  .price-spec-value span{
+    font-size: clamp(0.62rem, 2.7vw, 0.78rem);
+  }
   .site-nav{
     position: fixed;
     top: 64px; right: 0;
